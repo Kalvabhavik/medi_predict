@@ -1,8 +1,13 @@
 plugins {
-    id("com.android.application")
-    id("kotlin-android")
-    // The Flutter Gradle Plugin must be applied after the Android and Kotlin Gradle plugins.
-    id("dev.flutter.flutter-gradle-plugin")
+  ...
+  kotlin("plugin.serialization") version "$v3.6.0"
+}
+...
+dependencies {
+  ...
+  implementation(platform("io.github.jan-tennert.supabase:bom:$supabase_version"))
+  implementation("io.github.jan-tennert.supabase:postgrest-kt")
+  implementation("io.ktor:ktor-client-android:$ktor_version")
 }
 
 android {
@@ -41,4 +46,11 @@ android {
 
 flutter {
     source = "../.."
+}
+
+plugins {
+    id("com.android.application")
+    id("kotlin-android")
+    // The Flutter Gradle Plugin must be applied after the Android and Kotlin Gradle plugins.
+    id("dev.flutter.flutter-gradle-plugin")
 }

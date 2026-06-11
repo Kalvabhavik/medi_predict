@@ -87,6 +87,7 @@ class _SignupPageState extends State<SignupPage> {
             mainAxisSize: MainAxisSize.min,
             children: [
               TextField(
+                controller: emailController,
                 decoration: InputDecoration(
                   hintText: 'Email',
                   border: OutlineInputBorder(
@@ -98,6 +99,7 @@ class _SignupPageState extends State<SignupPage> {
               const SizedBox(height: 20),
 
               TextField(
+                controller: passwordController,
                 obscureText: true,
                 decoration: InputDecoration(
                   hintText: 'Create Password',
@@ -110,6 +112,7 @@ class _SignupPageState extends State<SignupPage> {
               const SizedBox(height: 20),
 
               TextField(
+                controller: confirmPasswordController,
                 obscureText: true,
                 decoration: InputDecoration(
                   hintText: 'Confirm Password',
@@ -122,9 +125,7 @@ class _SignupPageState extends State<SignupPage> {
               const SizedBox(height: 20),
 
         ElevatedButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
+          onPressed: signUp,
           child: const Text('Create Account'),
         ),
 
